@@ -19,3 +19,23 @@ data4.print();
 
 data3.add(data4).print();
 data3.mul(data4).print();
+
+
+// Using a Function Example
+
+function simpleAdd(input1, input2) {
+    return tf.tidy(() => {
+        const x1 = input1;
+        const x2 = input2;
+        const y = x1.add(x2);
+        return y;
+    });
+}
+
+// new 1 dimensional tensors/arrays
+const data1Arr = tf.tensor1d([4, 6, 5, 9]);
+const data2Arr = tf.tensor1d([5, 4, 34, 21]);
+
+const result = simpleAdd(data1Arr,data2Arr);
+//printing result
+result.print();
